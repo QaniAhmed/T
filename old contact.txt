@@ -1,0 +1,83 @@
+   <div class="container">
+            <div class="centered-section-header reveal">
+                <span class="section-lead-tag">تواصل معنا</span>
+                <h2 class="section-headline">يسعدنا دائماً خدمتك والإجابة على استفساراتك</h2>
+            </div>
+
+            <!-- الجزء العلوي: بطاقات التواصل موزعة على 3 أعمدة بشكل أنيق -->
+            <div class="contact-info-grid reveal">
+                <!-- الرقم الموحد -->
+                <a href="tel:00966115001595" class="contact-card-info">
+                    <div class="contact-icon-wrapper">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-meta">
+                        <h4>الرقم الموحد</h4>
+                        <p dir="ltr">00966115001595</p>
+                    </div>
+                </a>
+
+                <!-- البريد الإلكتروني -->
+                <a href="mailto:info@ccfc.com.sa" class="contact-card-info">
+                    <div class="contact-icon-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-meta">
+                        <h4>البريد الإلكتروني</h4>
+                        <p>info@almamr.com.sa</p>
+                    </div>
+                </a>
+
+                <!-- أوقات العمل -->
+                <div class="contact-card-info select-no-hover">
+    <div class="contact-icon-wrapper">
+        <i class="fa-solid fa-headset"></i> </div>
+    <div class="contact-meta">
+        <h4>الدعم الفني</h4>
+        <p>متاحون لخدمتكم على مدار الساعة 24/7</p>
+    </div>
+</div>
+            </div>
+
+            <!-- الجزء السفلي: نموذج طلب الاستشارة يمتد بكامل العرض بالأسفل -->
+            <div class="contact-bottom-row reveal">
+                <div class="consultation-form-card full-width-form">
+                    <div class="form-header">
+                        <h3 class="form-title">طلب استشارة مجانية</h3>
+                        <p class="form-subtitle">دعنا نُقصر لك المسافات وسنقوم بالرد عليك في أسرع وقت</p>
+                    </div>
+                    
+                    <form action="#" method="POST" class="consultation-form">
+                        <div class="form-row-three">
+                            <div class="form-group">
+                                <label for="full-name" class="form-label">الاسم بالكامل *</label>
+                                <input type="text" id="full-name" name="name" class="form-input" placeholder="اكتب اسمك الثلاثي" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone-number" class="form-label">رقم التواصل *</label>
+                                <input type="tel" id="phone-number" name="phone" class="form-input" placeholder="05xxxxxxxx" dir="ltr" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="work-email" class="form-label">البريد الإلكتروني للعمل *</label>
+                                <input type="email" id="work-email" name="email" class="form-input" placeholder="name@company.com" dir="ltr" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="request-details" class="form-label">تفاصيل الطلب أو نوع الشحنة والميناء الجمركي *</label>
+                            <textarea id="request-details" name="details" class="form-textarea" placeholder="مثال: استيراد بضائع عامة عبر ميناء جدة الإسلامي، ونوع الشحنة ملابس جاهزة..." required></textarea>
+                        </div>
+
+                        <div class="form-actions-submit">
+                            <button type="submit" class="btn-submit-consultation">
+                                <span>إرسال وحجز استشارة مسبقة</span>
+                                <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
