@@ -116,7 +116,7 @@ function switchForm(type) {
         label.innerText = "تفاصيل الشحنة (الوزن، النوع، بلد المنشأ) *";
         input.placeholder = "مثال: استيراد 5 طن مواد خام من الصين...";
     } else {
-        title.innerText = "طلب استشارة مجانية";
+        title.innerText = " طلب دراسة منتج للاستيراد ";
         subtitle.innerText = "دعنا نُقصر لك المسافات وسنقوم بالرد عليك في أسرع وقت";
         label.innerText = "تفاصيل الطلب أو نوع الشحنة *";
         input.placeholder = "مثال: استيراد بضائع عامة...";
@@ -136,7 +136,7 @@ document.querySelectorAll(".ports-grid").forEach((slider) => {
     }
 
     let x = 0;
-    const speed = 1.9;
+    const speed = 1.2;
     let paused = false;
 
     slider.addEventListener("mouseenter", () => paused = true);
