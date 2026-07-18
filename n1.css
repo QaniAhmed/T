@@ -366,7 +366,7 @@ p {
 
 .hero-title .highlight-hero {
     font-weight: 900; 
-    color: rgb(240, 45, 78);
+    color: rgb(240, 45, 191);
     font-size:44px 
 }
 
@@ -1519,82 +1519,77 @@ p {
 }
 
 /* ********************Sticky toolbar****************************************** */
-/* تنسيق الشريط العائم - تصميم أكثر نحافة وانسيابية */
+/* 1. الحاوية الرئيسية - تثبيت في اليسار ومنتصف الشاشة */
 .floating-toolbar-left {
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9999;
+    position: fixed !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 99999 !important;
     display: flex;
     flex-direction: column;
-    gap: 8px; /* تقليل المسافة بين الأزرار */
+    gap: 12px;
+    direction: ltr; /* إجبار الشريط على اليسار بغض النظر عن اتجاه الموقع */
 }
 
+/* 2. الأزرار - الشكل والتصميم الرصاصي */
 .float-item {
     display: flex;
     align-items: center;
-    background: #ffffff;
-    color: var(--color-brand-purple);
-    padding: 8px 12px;
-    
-    /* سر التصميم: زاوية دائرية كبيرة لليمين (الخارج)، وزاوية صغيرة لليسار (الداخل) */
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    border-top-left-radius: 4px; 
-    border-bottom-left-radius: 4px;
-    
-    text-decoration: none;
-    border: 1px solid rgba(79, 0, 140, 0.1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    justify-content: flex-start;
+    background-color: #F1F3F5 !important; /* رصاصي ثابت */
+    padding: 10px;
+    border-top-right-radius: 40px !important;
+    border-bottom-right-radius: 40px !important;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    width: 50px; 
+    height: 50px;
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
     overflow: hidden;
-    white-space: nowrap;
-    width: 40px; 
+    cursor: pointer;
+    text-decoration: none !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
 }
 
-/* النص */
+/* 3. الأيقونات */
+.float-item i {
+    font-size: 1.2rem;
+    color: var(--color-brand-purple); /* لون الأيقونة بنفسجي */
+    min-width: 30px;
+    text-align: center;
+}
+
+/* 4. النص (الLabel) - يظهر عند التمرير */
 .float-item .label {
     opacity: 0;
-    width: 0;
-    margin-right: 0;
-    transition: all 0.4s ease;
-    /* الخط المطلوب */
-    font-family: 'STC Forward Regular', Arial, sans-serif;
-    font-size: 0.85rem;
+    transition: opacity 0.2s ease;
+    font-family: 'STC Forward Regular', sans-serif !important;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    color: var(--color-brand-purple);
+    direction: rtl; /* إعادة النص للعربية */
+    margin-right: 10px;
 }
 
-/* الأيقونة */
-.float-item i {
-    font-size: 1.1rem;
-    min-width: 20px;
-}
-
-/* التفاعل عند الـ Hover - انسيابي */
+/* 5. تأثير التفاعل (Hover) */
 .float-item:hover {
-    width: 140px;
-    background: var(--color-brand-purple);
-    color: #ffffff;
-    
-    /* عند الفتح، نحافظ على الشكل الدائري لليمين ليتناسب مع الحركة */
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    width: 160px; /* العرض عند الفتح */
+    background-color: #F1F3F5 !important;
 }
 
 .float-item:hover .label {
     opacity: 1;
-    width: auto;
-    margin-right: 10px;
 }
 
-/* حالة خاصة للواتساب */
+/* 6. حالة خاصة للواتساب (أخضر) */
 .float-item.whatsapp:hover {
-    background: var(--color-success-whatsapp);
-    color: #ffffff;
-    border-color: var(--color-success-whatsapp);
+    background-color: var(--color-success-whatsapp) !important;
 }
-
-
+.float-item.whatsapp:hover i,
+.float-item.whatsapp:hover .label {
+    color: #ffffff !important;
+}
 
 
 /* ********************Sticky toolbar****************************************** */
