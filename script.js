@@ -101,25 +101,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function switchForm(type) {
-    const title = document.getElementById('form-title');
-    const subtitle = document.getElementById('form-subtitle');
-    const label = document.getElementById('details-label');
-    const input = document.getElementById('details-input');
-    
-    // تبديل حالة الأزرار (Active Class)
-    document.getElementById('btn-consultation').classList.toggle('active', type === 'consultation');
-    document.getElementById('btn-quote').classList.toggle('active', type === 'quote');
+    const quoteContent = document.getElementById('form-quote-content');
+    const consultContent = document.getElementById('form-consultation-content');
+    const btnQuote = document.getElementById('btn-quote');
+    const btnConsult = document.getElementById('btn-consultation');
 
-    if (type === 'quote') {
-        title.innerText = "طلب عرض سعر";
-        subtitle.innerText = "زودنا بتفاصيل شحنتك لنقدم لك أفضل تكلفة وأسرع زمن تخليص";
-        label.innerText = "تفاصيل الشحنة (الوزن، النوع، بلد المنشأ) *";
-        input.placeholder = "مثال: استيراد 5 طن مواد خام من الصين...";
+    if(type === 'quote') {
+        quoteContent.style.display = 'block';
+        consultContent.style.display = 'none';
+        btnQuote.classList.add('active');
+        btnConsult.classList.remove('active');
     } else {
-        title.innerText = " طلب دراسة منتج للاستيراد ";
-        subtitle.innerText = "دعنا نُقصر لك المسافات وسنقوم بالرد عليك في أسرع وقت";
-        label.innerText = "تفاصيل الطلب أو نوع الشحنة *";
-        input.placeholder = "مثال: استيراد بضائع عامة...";
+        quoteContent.style.display = 'none';
+        consultContent.style.display = 'block';
+        btnQuote.classList.remove('active');
+        btnConsult.classList.add('active');
     }
 }
 
@@ -188,3 +184,6 @@ window.addEventListener('scroll', () => {
         img.style.transform = `translateY(${yPos}px) scale(1.1)`;
     }
 });
+
+
+
