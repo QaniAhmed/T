@@ -416,8 +416,8 @@ p {
 
 .asymmetric-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xxl);
+    grid-template-columns: 1fr 1fr; /* النص يمين، الصورة يسار */
+    gap: 60px;
     align-items: center;
 }
 
@@ -611,34 +611,72 @@ p {
 /* ==========================================================================
    8. قسم المنافذ والموانئ الجمركية (PORTS SECTION)
    ========================================================================== */
+/* ==========================================================
+   PORTS SECTION
+========================================================== */
+
 .ports-section {
     padding-top: var(--space-xxl);
     padding-bottom: var(--space-xxl);
     background-color: var(--color-bg-base);
+    overflow: hidden;
 }
 
-/* البطاقات تعرض كلها */
+/* ==========================================================
+   SCROLLER
+========================================================== */
+
 .ports-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: var(--space-lg);
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+
+    direction: ltr;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    scroll-behavior: auto;
 }
+
+.ports-grid::-webkit-scrollbar {
+    display: none;
+}
+.ports-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    will-change: transform;
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
 
 .port-card {
+    direction: rtl;
+
+    flex: 0 0 360px;
+    width: 360px;
+
     background-color: var(--color-bg-light);
     border: 1px solid var(--color-border-light);
     border-radius: var(--radius-container);
+
     padding: var(--space-lg);
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: var(--transition-fast);
+
+    transition: all .4s cubic-bezier(.175,.885,.32,1.275);
 }
 
 .port-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-brand-purple);
-    box-shadow: var(--shadow-refined);
+    transform: translateY(-10px);
+    border-color: #25d366;
+    box-shadow: 0 20px 30px rgba(0,0,0,.10);
     background-color: var(--color-surface-white);
 }
 
@@ -647,55 +685,86 @@ p {
 }
 
 .port-tag {
+    display: inline-block;
+
+    margin-bottom: var(--space-xs);
+
+    padding: 3px 10px;
+
+    border-radius: 999px;
+
+    background-color: rgba(255,55,94,.08);
+    color: var(--color-brand-coral);
+
     font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
-    color: var(--color-brand-coral);
-    background-color: rgba(255, 55, 94, 0.08);
-    padding: 3px 10px;
-    border-radius: 50px;
-    display: inline-block;
-    margin-bottom: var(--space-xs);
 }
 
 .port-title {
     font-family: var(--font-body);
-    font-weight: 600;
     font-size: 18px;
+    font-weight: 600;
     line-height: 26px;
+
     color: var(--color-brand-purple);
 }
 
 .port-description {
     margin-bottom: var(--space-lg);
+    line-height: 1.8;
 }
 
 .port-action-btn {
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: auto;
+
+    padding-top: var(--space-sm);
+
+    border-top: 1px solid var(--color-border-light);
+
+    color: var(--color-brand-purple);
+
+    text-decoration: none;
+
     font-family: var(--font-body);
     font-size: 15px;
     font-weight: 600;
-    color: var(--color-brand-purple);
-    text-decoration: none;
-    border-top: 1px solid var(--color-border-light);
-    padding-top: var(--space-sm);
-    display: inline-flex;
-    align-items: center;
+
     transition: var(--transition-fast);
 }
 
 .port-card:hover .port-action-btn {
     color: var(--color-brand-coral);
-    border-color: rgba(79, 0, 140, 0.15);
+    border-color: rgba(79,0,140,.15);
 }
 
-.port-card {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .port-card {
+        flex: 0 0 320px;
+        width: 320px;
+    }
+
 }
 
-.port-card:hover {
-    transform: translateY(-10px);
-    border-color: #25d366; /* لون مميز عند التفاعل */
-    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+@media (max-width: 768px) {
+
+    .ports-track {
+        gap: var(--space-md);
+    }
+
+    .port-card {
+        flex: 0 0 280px;
+        width: 280px;
+    }
+
 }
 /* ==========================================================================
    9. قسم الاتصال ونموذج الاستشارة (CONTACT & FORM) - بدون الخرائط
@@ -933,25 +1002,95 @@ p {
 /* عرض سعر */
 
 .form-toggle-buttons {
+    
     display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
+    background: #f0edf4; /* خلفية خفيفة للمفتاح */
+    padding: 6px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    position: relative;
+    border: 1px solid rgba(79, 0, 140, 0.05);
+    
 }
 
 .toggle-btn {
-    padding: 10px 20px;
-    border: 1px solid var(--color-brand-purple);
+    font-family: 'STC Forward', sans-serif !important; /* استخدام خط STC */
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
     background: transparent;
-    color: var(--color-brand-purple);
+    color: #6c5a8a;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
 }
 
 .toggle-btn.active {
+    background: #ffffff;
+    color: var(--color-brand-purple);
+    box-shadow: 0 4px 12px rgba(15, 10, 28, 0.1);
+}
+
+.toggle-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
     background: var(--color-brand-purple);
-    color: #fff;
+    border-radius: 2px;
+}
+
+/* تأثير التلاشي عند التبديل */
+.form-content-fade {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* تغليف الفورم بالكامل */
+.consultation-form-card {
+    background: #ffffff;
+    /* إطار ناعم يحيط بالفورم ليعطيه شكل "المغلف" */
+    border: 1px solid rgba(79, 0, 140, 0.1); 
+    border-radius: 20px;
+    padding: 45px;
+    /* ظل عميق يعطي انطباع البروز عن الصفحة */
+    box-shadow: 0 20px 40px rgba(15, 10, 28, 0.08); 
+    position: relative;
+    overflow: hidden;
+}
+
+/* إضافة شريط ملون في الأعلى لزيادة الفخامة */
+.consultation-form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--color-brand-purple), #6366f1);
+}
+
+/* تحسين شكل حقول الإدخال لتظهر داخل "صناديق" */
+.form-input, .form-textarea {
+    background-color: #ffffff; /* أبيض صريح داخل المغلف */
+    border: 1.5px solid #e2e8f0; /* إطار أوضح */
+    padding: 16px;
+    border-radius: 12px;
+}
+
+/* جعل الحقول تتفاعل عند الضغط (إطار مضيء) */
+.form-input:focus, .form-textarea:focus {
+    border-color: var(--color-brand-purple);
+    box-shadow: 0 0 0 4px rgba(79, 0, 140, 0.1);
 }
 
 /* ==========================================================================
@@ -1230,12 +1369,17 @@ p {
 }
 
 .reveal-right {
-    transform: translateX(40px);
+    opacity: 0;
+    transform: translateX(50px); /* يبدأ من اليمين */
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* بطيء وتفاعلي */
 }
 
 .reveal-left {
-    transform: translateX(-40px);
+    opacity: 0;
+    transform: translateX(-50px); /* يبدأ من اليسار */
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* بطيء وتفاعلي */
 }
+
 
 .reveal.active {
     opacity: 1;
