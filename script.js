@@ -100,31 +100,63 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
- function switchForm(type) {
-        const title = document.getElementById('form-title');
-        const subtitle = document.getElementById('form-subtitle');
-        const detailsField = document.getElementById('details-field');
-        const btns = document.querySelectorAll('.toggle-btn');
-        
-        // تبديل التصميم بناءً على النوع
-        if (type === 'quote') {
-            title.innerText = "طلب عرض سعر";
-            subtitle.innerText = "أدخل بياناتك وسنتواصل معك لتقديم أفضل عرض سعر.";
-            detailsField.style.display = 'none';
-            // تفعيل زر "عرض سعر" بصرياً
-            btns.forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerText === "طلب عرض سعر") btn.classList.add('active');
-            });
-        } else {
-            title.innerText = "طلب استشارة مجانية";
-            subtitle.innerText = "دعنا نُقصر لك المسافات وسنقوم بالرد عليك في أسرع وقت";
-            detailsField.style.display = 'flex';
-            // تفعيل زر "استشارة" بصرياً
-            btns.forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerText === "طلب استشارة") btn.classList.add('active');
-            });
-        }
+function switchForm(type) {
+    const title = document.getElementById('form-title');
+    const subtitle = document.getElementById('form-subtitle');
+    const label = document.getElementById('details-label');
+    const input = document.getElementById('details-input');
+    
+    // تبديل حالة الأزرار (Active Class)
+    document.getElementById('btn-consultation').classList.toggle('active', type === 'consultation');
+    document.getElementById('btn-quote').classList.toggle('active', type === 'quote');
+
+    if (type === 'quote') {
+        title.innerText = "طلب عرض سعر";
+        subtitle.innerText = "زودنا بتفاصيل شحنتك لنقدم لك أفضل تكلفة وأسرع زمن تخليص";
+        label.innerText = "تفاصيل الشحنة (الوزن، النوع، بلد المنشأ) *";
+        input.placeholder = "مثال: استيراد 5 طن مواد خام من الصين...";
+    } else {
+        title.innerText = "طلب استشارة مجانية";
+        subtitle.innerText = "دعنا نُقصر لك المسافات وسنقوم بالرد عليك في أسرع وقت";
+        label.innerText = "تفاصيل الطلب أو نوع الشحنة *";
+        input.placeholder = "مثال: استيراد بضائع عامة...";
     }
-   
+}
+
+
+
+document.querySelectorAll(".ports-grid").forEach((slider) => {
+
+    const track = slider.querySelector(".ports-track");
+
+    // نسخ البطاقات مرة واحدة
+    if (!track.dataset.cloned) {
+        track.append(...Array.from(track.children).map(card => card.cloneNode(true)));
+        track.dataset.cloned = "true";
+    }
+
+    let x = 0;
+    const speed = 1.9;
+    let paused = false;
+
+    slider.addEventListener("mouseenter", () => paused = true);
+    slider.addEventListener("mouseleave", () => paused = false);
+
+    function animate() {
+        if (!paused) {
+            x -= speed;
+
+            const halfWidth = track.scrollWidth / 2;
+
+            if (Math.abs(x) >= halfWidth) {
+                x = 0;
+            }
+
+            track.style.transform = `translateX(${x}px)`;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+});
