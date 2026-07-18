@@ -1117,6 +1117,107 @@ p {
     }
 }
 
+
+/* --- الحاوية الرئيسية --- */
+.section-divider-header {
+    text-align: center;
+    padding: 80px 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- الإطار التفاعلي للصورة والنص --- */
+.divider-visual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s ease;
+}
+
+/* --- الصورة التفاعلية (Zoom Effect) --- */
+.divider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 1.5s cubic-bezier(0.3, 1, 0.2, 1);
+    transform: scale(1);
+}
+
+/* الطبقة المظلمة */
+.divider-visual-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    transition: background 0.5s ease;
+}
+
+/* --- النصوص (تفاعلية) --- */
+.divider-text-overlay {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section-headline-main {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    text-shadow: 0 4px 15px rgba(169, 163, 163, 0.2);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+    color:white;
+}
+
+.divider-line {
+    width: 0; /* يبدأ من صفر */
+    height: 4px;
+    background: #ffffff;
+    margin: 20px auto;
+    border-radius: 2px;
+    transition: width 1.2s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.section-sub-lead {
+    font-size: 1.4rem;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease 0.3s;
+}
+
+/* --- الحالات التفاعلية عند التفعيل (active) --- */
+.section-divider-header.active .divider-image {
+    transform: scale(1.1); /* تمدد الصورة عند الوصول */
+}
+
+.section-divider-header.active .section-headline-main {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-divider-header.active .divider-line {
+    width: 200px; /* تمدد الخط */
+}
+
+.section-divider-header.active .section-sub-lead {
+    opacity: 1;
+    transform: translateY(0);
+}
 /* ==========================================================================
    10. تذييل الصفحة المطور والأكبر (FOOTER DESIGN)
    ========================================================================== */
@@ -1501,49 +1602,6 @@ p {
     }
 }
 
-
-/* هذا الكلاس سنضيفه بالجافا سكريبت عند التمرير */
-.zoom-image.scaled {
-    transform: scale(1.2); 
-}
-
-
-/* تحسين رأس القسم لضمان التباعد */
-.section-divider-header {
-    text-align: center;
-    margin-bottom: 3.5rem; /* هنا المسافة العمودية التي طلبتها */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.section-headline-main {
-    font-size: 2rem;
-    margin-bottom: 0;
-}
-
-/* خط فاصل أنيق بين العنوان والفقرة */
-.divider-line {
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-brand-purple);
-    margin: 10px 0;
-    border-radius: 2px;
-}
-
-.section-sub-lead {
-    color: var(--color-text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
-}
-
-/* التأكد من أن الشبكة تأخذ مساحتها كاملة */
-.contact-info-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
-}
 
 @media (max-width: 768px) {
     .contact-info-grid {

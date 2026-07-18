@@ -160,3 +160,31 @@ document.querySelectorAll(".ports-grid").forEach((slider) => {
 
     animate();
 });
+
+
+
+// (لتفعيل الحركة عند التمرير
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.5 }); // يبدأ التأثير عندما تظهر نصف مساحة القسم
+
+observer.observe(document.querySelector('.section-divider-header'));
+
+window.addEventListener('scroll', () => {
+    const section = document.querySelector('.section-divider-header');
+    const img = document.querySelector('.divider-image');
+    const rect = section.getBoundingClientRect();
+    
+    // إذا كان القسم مرئياً على الشاشة
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        // حساب المسافة التي قطعها السكرول داخل القسم
+        const scrolled = window.scrollY - section.offsetTop;
+        // تحريك الصورة ببطء (تغيير 0.2 يتحكم في السرعة)
+        const yPos = scrolled * 0.3; 
+        img.style.transform = `translateY(${yPos}px) scale(1.1)`;
+    }
+});
