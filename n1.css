@@ -997,6 +997,7 @@ p {
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
+    font-family: var(--font-header) !important;
 }
 .btn-submit-consultation:hover {
     background-color: #1a0c2f;
