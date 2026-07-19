@@ -785,8 +785,7 @@ p {
    ========================================================================== */
 /* القسم العام */
 .contact-section {
-    padding-top: var(--space-xxl);
-    padding-bottom: var(--space-xxl);
+    padding: var(--space-xxl) 20px;
     background-color: var(--color-bg-light);
 }
 
@@ -900,34 +899,17 @@ p {
 
 /* تحسين استجابة الشاشات الصغيرة */
  ***************************form************************************ */
-/* =========================================
-   تنسيق حاوية النموذج العامة (Card)
-========================================= */
-.consultation-form-card {
+
+.consultation-form-card.full-width-form {
     background: #ffffff;
-    border: 1px solid rgba(79, 0, 140, 0.1); 
-    border-radius: 20px;
-    padding: 45px;
-    box-shadow: 0 20px 40px rgba(15, 10, 28, 0.08); 
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+    border: 1px solid rgba(15, 10, 28, 0.08);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(15, 10, 28, 0.04);
     box-sizing: border-box;
-}
-
-.consultation-form-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, var(--color-brand-purple), #6366f1);
 }
 
-/* =========================================
-   الهيدر والتنقل (Header & Toggles)
-========================================= */
 .form-header {
     margin-bottom: 30px;
     border-bottom: 1px dashed rgba(15, 10, 28, 0.1);
@@ -948,78 +930,42 @@ p {
     font-weight: 500;
 }
 
-.form-toggle-buttons {
-    display: flex;
-    background: #f0edf4;
-    padding: 6px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    position: relative;
-    border: 1px solid rgba(79, 0, 140, 0.05);
-}
-
-.toggle-btn {
-    font-family: 'STC Forward', sans-serif !important;
-    flex: 1;
-    padding: 12px 20px;
-    border: none;
-    background: transparent;
-    color: #6c5a8a;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1;
-}
-
-.toggle-btn.active {
-    background: #ffffff;
-    color: var(--color-brand-purple);
-    box-shadow: 0 4px 12px rgba(15, 10, 28, 0.1);
-}
-
-/* =========================================
-   الحقول والشبكات (Form Fields & Grids)
-========================================= */
 .consultation-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.section-title {
-    color: #4a4a4a;
-    font-size: 1.1rem;
-    margin: 20px 0 5px 0;
-    text-align: right;
-    font-weight: 700;
-}
-
+/* صف الحقول الثلاثي المتناسق للنموذج العريض */
 .form-row-three {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
-.form-row-five {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
+}
+
+.form-label {
+    font-size: 0.88rem;
+    color: #3b2c54;
+    font-weight: 700;
 }
 
 .form-input, .form-textarea, .form-select {
     width: 100%;
-    /* تم تقليل الـ padding من 16px إلى 12px لتصغير ارتفاع الحقل */
-    padding: 12px 10px; 
+    padding: 14px 18px;
     border: 1.5px solid #e2e8f0;
-    border-radius: 10px; /* تم تقليل الـ border-radius قليلاً لتتناسب مع الارتفاع */
+    border-radius: 12px;
     font-family: var(--font-header) !important;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     color: #1a0c2f;
-    background-color: #ffffff;
+    background-color: #ffffff; /* أبيض صريح */
     transition: all 0.3s ease;
-    box-sizing: border-box;
 }
 
 .form-input:focus, .form-textarea:focus, .form-select:focus {
@@ -1028,44 +974,71 @@ p {
     box-shadow: 0 0 0 4px rgba(79, 0, 140, 0.1);
 }
 
-/* =========================================
-   تنسيق خاص للقائمة المنسدلة (Select)
-========================================= */
-.form-select {
-    appearance: none;
-    cursor: pointer;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a0c2f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: left 12px center; /* تم تعديل الموقع */
-    background-size: 14px; /* تم تقليل الحجم */
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    max-height: 250px;
 }
 
-/* =========================================
-   زر الإرسال (Submit Button)
-========================================= */
 .form-actions-submit {
-    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start; /* زر الإرسال بمحاذاة اليمين */
+    margin-top: 5px;
 }
 
 .btn-submit-consultation {
+    width: 100%;
     background-color: var(--color-brand-purple);
     color: #ffffff;
+    padding: 16px;
     border: none;
-    border-radius: 8px;
-    padding: 15px 35px;
-    font-family: var(--font-header) !important;
+    border-radius: 12px;
+    font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
-
 .btn-submit-consultation:hover {
     background-color: #1a0c2f;
-    box-shadow: 0 5px 15px rgba(79, 0, 140, 0.25);
     transform: translateY(-2px);
+}
+
+
+
+/* عرض سعر */
+
+.form-toggle-buttons {
+    display: flex;
+    background: #f0edf4;
+    padding: 6px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    gap: 5px;
+    
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #6c5a8a;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+     font-family: 'STC Forward Regular', sans-serif !important;
+}
+
+.toggle-btn.active {
+    background: #ffffff;
+    color: var(--color-brand-purple);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* تأثير التلاشي عند التبديل */
+.form-content-fade {
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -1073,6 +1046,70 @@ p {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* تغليف الفورم بالكامل */
+.consultation-form-card {
+    background: #ffffff;
+    border: 2px solid rgba(79, 0, 140, 0.1); /* إطار خارجي للفورم */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(15, 10, 28, 0.06);
+    
+    /* توسيط الفورم والتحكم في عرضه */
+    max-width: 850px; 
+    width: 100%;     
+    margin: 0 auto;  /* هذا هو الجزء الذي يجعله في وسط الصفحة */
+    
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* إضافة شريط ملون في الأعلى لزيادة الفخامة */
+.consultation-form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--color-brand-purple), #6366f1);
+}
+
+/* تحسين شكل حقول الإدخال لتظهر داخل "صناديق" */
+.form-input, .form-textarea {
+    background-color: #ffffff; /* أبيض صريح داخل المغلف */
+    border: 1.5px solid #e2e8f0; /* إطار أوضح */
+    padding: 16px;
+    border-radius: 12px;
+}
+
+/* جعل الحقول تتفاعل عند الضغط (إطار مضيء) */
+.form-input:focus, .form-textarea:focus {
+    border-color: var(--color-brand-purple);
+    box-shadow: 0 0 0 4px rgba(79, 0, 140, 0.1);
+}
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+/* تنسيق عند التفاعل */
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-brand-purple);
+    box-shadow: 0 0 0 4px rgba(79, 0, 140, 0.08);
+}
+
+/* تنسيق عند اختيار عنصر (اختياري) */
+.form-select option {
+    padding: 10px;
+    color: #1a0c2f;
+}
 /* ==========================================================================
    إضافات التجاوب والشاشات (Media Queries المخصصة للنموذج والبطاقات)
    ========================================================================== */
