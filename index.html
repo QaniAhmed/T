@@ -17,33 +17,40 @@
 
 <body>
 
-    <header class="site-header">
-        <div class="main-navbar">
-            <div class="container main-nav-container">
-                
-                <a href="#" class="brand-identity">
-                    <img src="W.png" alt="الممر السريع للتخليص الجمركي" class="brand-logo-img">
-                    <div class="brand-logo-text">
-                        الممر السريع
-                        <span class="highlight-text">للتخليص الجمركي والخدمات اللوجستية</span>
-                    </div>
-                </a>
-                
-                <nav class="main-nav-menu">
-                    <ul class="nav-link-list">
-                        
-                        <li class="nav-link-item"><a href="#" class="active">الرئيسية</a></li>
-                        <li class="nav-link-item"><a href="#about">من نحن</a></li>
-                        <li class="nav-link-item"><a href="#services">خدماتنا</a></li>
-                        <li class="nav-link-item"><a href="#ports">الجمرك</a></li>
-                        <li class="nav-link-item"><a href="#btn-quote" onclick="switchForm('quote')">عرض سعر</a></li>
-                        <li class="nav-link-item"><a href="#contact" onclick="switchForm('consultation')">اتصل بنا</a></li>
-                    </ul>
-                </nav>
+   <header class="site-header">
+    <div class="main-navbar">
+        <div class="container main-nav-container">
+            
+        
 
+            <!-- 2. الشعار -->
+            <a href="#" class="brand-identity">
+                <img src="W.png" alt="الممر السريع للتخليص الجمركي" class="brand-logo-img">
+                <div class="brand-logo-text">
+                    الممر السريع
+                    <span class="highlight-text">للتخليص الجمركي والخدمات اللوجستية</span>
+                </div>
+            </a>
+            
+            <!-- 3. القائمة الرئيسية (بدون عرض السعر) -->
+            <nav class="main-nav-menu">
+                <ul class="nav-link-list">
+                    <li class="nav-link-item"><a href="#" class="active">الرئيسية</a></li>
+                    <li class="nav-link-item"><a href="#about">من نحن</a></li>
+                    <li class="nav-link-item"><a href="#services">خدماتنا</a></li>
+                    <li class="nav-link-item"><a href="#ports">الجمرك</a></li>
+                    <li class="nav-link-item"><a href="#contact" onclick="switchForm('consultation')">اتصل بنا</a></li>
+                </ul>
+            </nav>
+
+                <!-- 1. زر عرض السعر في أقصى اليسار -->
+            <div class="nav-quote-wrapper">
+                <a href="#btn-quote" class="btn-quote" onclick="switchForm('quote')">طلب عرض سعر</a>
             </div>
+
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- قسم HERO -->
     <!-- صورة -->
@@ -179,83 +186,90 @@
         <div class="zoom-image"></div>
     </section>
 
-    <!-- الخدمات -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="centered-section-header reveal">
-                <span class="section-lead-tag">خدماتنا اللوجستية المتكاملة</span>
-                <h2 class="section-headline">حلول احترافية تغطي كافة احتياجات أعمالكم</h2>
-                <p>نركز على تقديم خدمات رصينة مبنية على الموثوقية والدقة العالية لتسريع عمليات شحنكم وتوريدكم.</p>
+   <!-- الخدمات -->
+<section id="services" class="services-section">
+    <div class="container">
+        <div class="centered-section-header reveal">
+            <span class="section-lead-tag">خدماتنا اللوجستية المتكاملة</span>
+            <h2 class="section-headline">حلول احترافية تغطي كافة احتياجات أعمالكم</h2>
+            <p>نركز على تقديم خدمات رصينة مبنية على الموثوقية والدقة العالية لتسريع عمليات شحنكم وتوريدكم.</p>
+        </div>
+
+        <div class="services-grid-asymmetric">
+            <!-- 1. التخليص الجمركي -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h3 class="service-card-title">التخليص والاستشارات الجمركية</h3>
+                <p class="service-card-desc">نوفر خدمات التخليص لجميع الشحنات الواردة والصادرة والترانزيت عبر المنافذ البرية والبحرية والجوية. نتولى الإجراءات بكفاءة مع تقديم استشارات متخصصة لتجنب التأخير والغرامات.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: التخليص والاستشارات الجمركية" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <!-- 2. دراسة التكاليف -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-calculator"></i></div>
+                <h3 class="service-card-title">دراسة تكاليف الاستيراد قبل الشراء</h3>
+                <p class="service-card-desc">نقدم دراسة شاملة لتكاليف استيراد منتجك قبل الشراء، تشمل الرسوم الجمركية، والضرائب، وتكاليف الشحن، وشهادات المطابقة لتبني قرارك الاستيرادي على معلومات دقيقة.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: دراسة تكاليف الاستيراد" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
             </div>
 
-            <div class="services-grid-asymmetric">
-                <!-- 1. التخليص الجمركي -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                    <h3 class="service-card-title">التخليص والاستشارات الجمركية</h3>
-                    <p class="service-card-desc">نوفر خدمات التخليص لجميع الشحنات الواردة والصادرة والترانزيت عبر المنافذ البرية والبحرية والجوية. نتولى الإجراءات بكفاءة مع تقديم استشارات متخصصة لتجنب التأخير والغرامات.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: التخليص والاستشارات الجمركية" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-                
+            <!-- 3. الترانزيت -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-route"></i></div>
+                <h3 class="service-card-title">خدمات العبور الجمركي (الترانزيت)</h3>
+                <p class="service-card-desc">نوفر خدمات الترانزيت للبضائع العابرة عبر المنافذ الجمركية، مع استكمال جميع الإجراءات النظامية والضمانات المطلوبة لضمان وصول شحنتك بكفاءة عالية.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: العبور الجمركي (الترانزيت)" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
 
-                <!-- 2. دراسة التكاليف -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-calculator"></i></div>
-                    <h3 class="service-card-title">دراسة تكاليف الاستيراد قبل الشراء</h3>
-                    <p class="service-card-desc">نقدم دراسة شاملة لتكاليف استيراد منتجك قبل الشراء، تشمل الرسوم الجمركية، والضرائب، وتكاليف الشحن، وشهادات المطابقة لتبني قرارك الاستيرادي على معلومات دقيقة.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: دراسة تكاليف الاستيراد" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+            <!-- 4. سابر -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-award"></i></div>
+                <h3 class="service-card-title">إصدار شهادات المطابقة (سابر)</h3>
+                <p class="service-card-desc">نتولى تسجيل المنتجات وإصدار شهادات المطابقة عبر منصة سابر، بما يضمن استكمال المتطلبات الفنية والتنظيمية وتمكين دخول المنتجات إلى السوق السعودي بسلاسة.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: إصدار شهادات المطابقة (سابر)" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
 
-                <!-- 3. الترانزيت -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-route"></i></div>
-                    <h3 class="service-card-title">خدمات العبور الجمركي (الترانزيت)</h3>
-                    <p class="service-card-desc">نوفر خدمات الترانزيت للبضائع العابرة عبر المنافذ الجمركية، مع استكمال جميع الإجراءات النظامية والضمانات المطلوبة لضمان وصول شحنتك بكفاءة عالية.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: العبور الجمركي (الترانزيت)" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+            <!-- 5. الغذاء والدواء -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+                <h3 class="service-card-title">خدمات الغذاء والدواء (SFDA)</h3>
+                <p class="service-card-desc">نقدم خدمات تسجيل وفسح المنتجات الغذائية والدوائية والأجهزة الطبية ومستحضرات التجميل، مع استكمال جميع المتطلبات لضمان مطابقة الشحنات لاشتراطات الهيئة العامة.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: خدمات الغذاء والدواء (SFDA)" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
 
-                <!-- 4. سابر -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-award"></i></div>
-                    <h3 class="service-card-title">إصدار شهادات المطابقة (سابر)</h3>
-                    <p class="service-card-desc">نتولى تسجيل المنتجات وإصدار شهادات المطابقة عبر منصة سابر، بما يضمن استكمال المتطلبات الفنية والتنظيمية وتمكين دخول المنتجات إلى السوق السعودي بسلاسة.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: إصدار شهادات المطابقة (سابر)" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+            <!-- 6. الشحن الدولي -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
+                <h3 class="service-card-title">الشحن الدولي (بحري – جوي – بري)</h3>
+                <p class="service-card-desc">نوفر خدمات الشحن البحري والجوي والبري من وإلى مختلف دول العالم، مع خيارات مرنة للشحن الكامل والجزئي (LCL/FCL) بما يلبي متطلبات الاستيراد والتصدير.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: الشحن الدولي" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
 
-                <!-- 5. الغذاء والدواء -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
-                    <h3 class="service-card-title">خدمات الغذاء والدواء (SFDA)</h3>
-                    <p class="service-card-desc">نقدم خدمات تسجيل وفسح المنتجات الغذائية والدوائية والأجهزة الطبية ومستحضرات التجميل، مع استكمال جميع المتطلبات لضمان مطابقة الشحنات لاشتراطات الهيئة العامة.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: خدمات الغذاء والدواء (SFDA)" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+            <!-- 7. النقل اللوجستي -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-truck-moving"></i></div>
+                <h3 class="service-card-title">النقل اللوجستي والتوزيع</h3>
+                <p class="service-card-desc">نوفر خدمات النقل البري إلى مقرات العميل، مع الالتزام التام بمعايير السلامة والجودة والسرعة الفائقة.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: النقل اللوجستي والتوزيع" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
 
-                <!-- 6. الشحن الدولي -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
-                    <h3 class="service-card-title">الشحن الدولي (بحري – جوي – بري)</h3>
-                    <p class="service-card-desc">نوفر خدمات الشحن البحري والجوي والبري من وإلى مختلف دول العالم، مع خيارات مرنة للشحن الكامل والجزئي (LCL/FCL) بما يلبي متطلبات الاستيراد والتصدير.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: الشحن الدولي" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+            <!-- 8. تعاقد معنا (الخدمة الجديدة) -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-handshake"></i></div>
+                <h3 class="service-card-title">تعاقد معنا</h3>
+                <p class="service-card-desc">انضم لقائمة شركائنا واحصل على دعم متكامل يضمن انسيابية أعمالك. نوفر لك باقة خدمات احترافية مع خدمة عملاء مخصصة على مدار الساعة (24/7).</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: التعاقد" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
 
-                <!-- 7. النقل اللوجستي -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-truck-moving"></i></div>
-                    <h3 class="service-card-title">النقل اللوجستي والتوزيع</h3>
-                    <p class="service-card-desc">نوفر خدمات النقل البري  إلى  مقرات العميل ، مع الالتزام التام بمعايير السلامة والجودة والسرعة الفائقة.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: النقل اللوجستي والتوزيع" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-
-                <!-- 8. البوابة الإلكترونية -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3 class="service-card-title">البوابة الإلكترونية وتتبع الشحنات</h3>
-                    <p class="service-card-desc">تتيح لك بوابتنا الإلكترونية رفع المستندات، ومتابعة حالة المعاملات الجمركية، وتتبع الشحنات، والتواصل مع فريق العمل بشكل مباشر لتوفير تجربة رقمية سهلة وشفافة.</p>
-                    <a href="https://wa.me/966115001595?text=أرغب في خدمة: البوابة الإلكترونية" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+            <!-- 9. البوابة الإلكترونية -->
+            <div class="service-card reveal">
+                <div class="service-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3 class="service-card-title">البوابة الإلكترونية وتتبع الشحنات</h3>
+                <p class="service-card-desc">تتيح لك بوابتنا الإلكترونية رفع المستندات، ومتابعة حالة المعاملات الجمركية، وتتبع الشحنات، والتواصل مع فريق العمل بشكل مباشر لتوفير تجربة رقمية سهلة وشفافة.</p>
+                <a href="https://wa.me/966115001595?text=أرغب في خدمة: البوابة الإلكترونية" target="_blank" class="service-order-btn">اطلب الخدمة <i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
   
     <!-- موانئ -->
 <section id="ports" class="ports-section">
@@ -650,15 +664,15 @@
 
     <!-- footer -->
     <footer class="site-footer">
-        <div class="container">
+        <div class="container10">
             
             <div class="footer-grid">
-                <div class="footer-column footer-brand-column">
+                <!-- <div class="footer-column footer-brand-column">
                     <h3 class="footer-title">الممر السريع</h3>
                     <p class="footer-brand-desc">
                         الممر السريع للتخليص الجمركي - حلول ذكية متكاملة توفر وقتكم وتضمن انسياب شحناتكم عبر كافة المعابر والحدود الجمركية بكفاءة فائقة وسرعة وطنية واعدة تليق بتطلعاتكم اللوجستية.
                     </p>
-                </div>
+                </div> -->
 
                 <div class="footer-column">
                     <h4 class="footer-title">روابط مهمة</h4>
@@ -682,17 +696,33 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4 class="footer-title">أبرز منافذ الخدمة</h4>
+                    <h4 class="footer-title">الخدمات الإلكترونية</h4>
                     <ul class="footer-links">
-                        <li><a href="/jeddah-islamic-port">ميناء جدة الإسلامي</a></li>
-                        <li><a href="/riyadh-dry-port">ميناء الرياض الجاف</a></li>
-                        <li><a href="/dammam-port">ميناء الملك عبدالعزيز</a></li>
-                        <li><a href="/king-abdullah-port">ميناء الملك عبدالله</a></li>
+                        <li><a href="#airports"> الشحن الجوي </a></li>
+                        <li><a href="#ports">الشحن البحري</a></li>
+                        <li><a href="#land-ports"> الشحن البري</a></li>
                     </ul>
                 </div>
+
+                 <div class="footer-column footer-brand-column">
+                <a href="#" class="footer-brand-logo">
+                    <img src="W2.png" alt="الممر السريع" class="footer-logo-img">
+                    <div class="footer-logo-text">
+                        الممر السريع
+                        <span class="highlight-text">للخدمات اللوجستية</span>
+                    </div>
+                </a>
+               
+                </div>
+                  
+                
             </div>
 
-            <div class="footer-middle-bar">
+
+             
+        </div>
+
+            <!-- <div class="footer-middle-bar">
                 <div class="footer-social-icons">
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://www.instagram.com/abod.i669/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -704,7 +734,7 @@
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://wa.me/00966115001595" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
-            </div>
+            </div> -->
 
             <div class="footer-bottom">
                 <div class="footer-bottom-right">
@@ -720,32 +750,14 @@
     <script>
     </script>
 
- <!-- <div class="floating-toolbar-left">
-    <!-- رابط الاتصال الهاتفي -->
-    <a href="tel:+966115001595" class="float-item" title="اتصل بنا">
-        <i class="fa-solid fa-phone"></i>
-        <span class="label">اتصل بنا</span>
-    </a>
-    
-    <!-- رابط البريد الإلكتروني -->
-    <a href="mailto:info@almamr.com.sa" class="float-item" title="راسلنا">
-        <i class="fa-solid fa-envelope"></i>
-        <span class="label">إرسال بريد</span>
-    </a>
-    
-    <!-- رابط الواتساب -->
-    <a href="https://wa.me/966115001595" target="_blank" class="float-item whatsapp" title="واتساب">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span class="label">الدردشة المباشرة</span>
-    </a>
-</div> -->
+
 
 <div class="floating-toolbar-left">
     <a href="tel:+966115001595" class="float-item">
         <i class="fa-solid fa-phone"></i>
         <span class="label">اتصل بنا</span>
     </a>
-    <a href="mailto:info@example.com" class="float-item">
+    <a href="info@almamr.com.sa" class="float-item">
         <i class="fa-solid fa-envelope"></i>
         <span class="label">إرسال بريد</span>
     </a>
